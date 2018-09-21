@@ -2,5 +2,5 @@ This is Audiocom, a list of educational scripts to learn about how to steganogra
 
 Audiocom is primarily used for teaching and maintained by Lovefield Wireless.
 
-  * [Class "Wireless and Mobile Computing for Entertainment Applications" at ETH Zurich](http://www.lst.inf.ethz.ch/education/wireless.html)
+  * [Class "Wireless Networking and Mobile Computing" at ETH Zurich](http://www.lst.inf.ethz.ch/education/wireless1.html)
   * [Lovefield Wireless GmbH](http://www.lovefield.ch)
