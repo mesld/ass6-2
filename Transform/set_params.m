@@ -76,8 +76,6 @@ p.addParamValue('imp_resp_path',imp_resp_path,@(x) exist(x,'dir'));
 p.addParamValue('theSoundFile',filename);
 p.addParamValue('message',message);
 p.addParamValue('Fs',Fs,@(x) isnumeric(x) && any(x == [11025,22050,44100,88200,12000,24000,48000,96000]));
-p.parameters
-pause
 p.addParamValue('N',N,@(x) isnumeric(x) && any(x == [256,512,1024,2048,4096,8192,16384]));
 p.addParamValue('lower_freq_limit',lower_freq_limit,@(x) isnumeric(x) && x>0 && x<=p.Results.Fs/2);
 p.addParamValue('upper_freq_limit',upper_freq_limit,@(x) isnumeric(x) && x>0 && x<=p.Results.Fs/2 && x>p.Results.lower_freq_limit);
