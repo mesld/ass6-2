@@ -111,8 +111,9 @@ if(ischar(params.message))
     %read message from file
     
     cd ..;
-    urlname = ['file:///' fullfile(pwd,params.message)];    
-    cd Transform;
+//urlname = ['file:///' fullfile(pwd,params.message)];    
+    urlname = ['file://' strrep(fullfile(pwd,params.message), " ", "%20")]
+cd Transform;
     try
         str = urlread(urlname);
     catch err
