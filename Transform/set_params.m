@@ -21,8 +21,8 @@ filename = 'carrier';                   % default filename
 message = ones(1e6,1);                  % default message
 Fs = 44100;                             % sampling rate
 N = 4096;                               % block size
-lower_freq_limit = 5900;                % lower data frequency limit
-upper_freq_limit = 10050;               % upper data frequency limit
+lower_freq_limit = 3900;                % lower data frequency limit
+upper_freq_limit = 8050;               % upper data frequency limit
 code = [-1 1 -1 1]';                    % spreading code
 use_sync_blocks = false;                % use packets -> sync code blocks at the start of each packet (decoding only implemented in iOS app)
 %sync_code = [1 -1 -1 1]';               % spreading code to mark start of a packet
@@ -33,7 +33,7 @@ precompiledParametersForSpeedUp = false;
 
 
 % plotting parameters
-make_plot = false;     % enable plotting
+make_plot = true;     % enable plotting
 plot_range_min = 100; % min block number
 plot_range_max = 200; % max block number
 
@@ -47,7 +47,7 @@ impulse_response = '';                  % simulate transmission over an acoustic
 sim_daad_conv = false;                  % simulate digital-analog-analog-digital conversion with shift of 0.5 samples (worst case)
 write_wav = true;                       % write files to disk
 write_sim_wav = false;                  % write channel simulated file to disk                     
-write_statistics = false;               % write statistics file to disk
+write_statistics = true;               % write statistics file to disk
 cancel_interf = true;                   % interference cancellation (always on if phase_coding_method 1 or 2 is used)
 
 phase_coding_method = 2;                % phase coding method
@@ -112,7 +112,7 @@ if(ischar(params.message))
     
     cd ..;
 % urlname = ['file:///' fullfile(pwd,params.message)];    
-    urlname = ['file://' strrep(fullfile(pwd,params.message), " ", "%20")]
+    urlname = ['file://' strrep(fullfile(pwd,params.message), " ", "%20")];
 cd Transform;
     try
         str = urlread(urlname);

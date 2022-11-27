@@ -120,9 +120,9 @@ end
 sorted_offsets = sorted_offsets - 1;
 offset = mod(sorted_offsets(k),N);
 sync_block_offset = mod(floor(sorted_offsets(k)/N),2);
-disp(['block offset: ', num2str(offset)]);
-disp(['Sync offset: ', num2str(sync_block_offset)]);
-disp(['Max sync coefficient: ', num2str(max_coeffs_sum/codes_per_block/params.num_sync_runs)]);
+disp(['  block offset:         ', num2str(offset)]);
+disp(['  sync offset:          ', num2str(sync_block_offset)]);
+disp(['  max sync coefficient: ', num2str(max_coeffs_sum/codes_per_block/params.num_sync_runs)]);
 
 carrier = carrier(1+offset:end);
 noblocks = floor(length(carrier)/N)-1; %number of MCLT blocks in carrier signal

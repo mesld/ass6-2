@@ -16,7 +16,7 @@ function visualize_sound(aWavFile,time_interval_s)
 
   pkg load signal;
   
-  [x,fs] = audioread([aWavFile '.wav']);   % get a section of the sound file
+  [x,fs] = audioread(aWavFile);   % get a section of the sound file
 
   if (min(time_interval_s)==0)
     time_interval_s(1) = time_interval_s(1) + 0.001;
@@ -24,7 +24,7 @@ function visualize_sound(aWavFile,time_interval_s)
 
   time_interval_samples = round(time_interval_s * fs);
 
-  [x,fs] = audioread([aWavFile '.wav'], time_interval_samples);
+  [x,fs] = audioread([aWavFile], time_interval_samples);
 
   x = x(:,1); % get the first channel
   xmax = max(abs(x)); % find the maximum value
@@ -68,16 +68,15 @@ function visualize_sound(aWavFile,time_interval_s)
   xlabel('Frequency [kHz]')
   ylabel('Amplitude [dBV]')
   set(gca,'FontSize',FontSize);
-  set(gca,'FontName','Helvetica'); 
-
+  set(gca,'FontName','Roboto');
 
   figName = ([ aWavFile '_spectrogram']);
   figure('NumberTitle', 'on', 'Name', figName,'PaperPositionMode', 'auto','Position', [220 200 700 300],'Pointer', 'arrow');
   set(gcf, 'color', 'white'); set(gcf, 'InvertHardCopy', 'off'); set(gca,'Position',[0.09,0.14,0.84,0.82]);
 
-  specgram(x,512,fs) % 97% overlapping
+  specgram(x,256,fs) % 97% overlapping
   xlabel('Time [s]')
-  ylabel('Frequency [kHz]')
+  ylabel('Frequency [Hz]')
   box on; h = colorbar;
   ylabel(h, 'Magnitude [dB]');
     

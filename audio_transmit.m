@@ -4,13 +4,14 @@ function audio_transmit(aTextMessage,aSoundFile)
 %   Example use:
 %   >>  audio_transmit('message.txt','hello.wav')
 
-disp(' ');
-disp('Mobile Computing: Audiocom transmitter.');
+disp (' ');
+disp ('=======================================');
+disp ('Mobile Computing: Audiocom transmitter.');
+disp ('---------------------------------------');
 
 cd Transform
 
-%% MODIFY HERE
-embed_and_save('mono','message',aTextMessage, 'theSoundFile',aSoundFile, 'redundancy_coding',true,'redundancy_factor',3)
+embed_and_save('mono','message',aTextMessage, 'theSoundFile',cell2mat(strsplit (aSoundFile, ".wav")), 'redundancy_coding',true,'redundancy_factor',3)
 
 %%
 cd ..
