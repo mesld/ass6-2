@@ -4,6 +4,8 @@ function audio_transmit(aTextMessage,aSoundFile)
 %   Example use:
 %   >>  audio_transmit('message.txt','hello.wav')
 
+pkg load signal
+
 disp (' ');
 disp ('=======================================');
 disp ('Mobile Computing: Audiocom transmitter.');

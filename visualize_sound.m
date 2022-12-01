@@ -76,7 +76,7 @@ function visualize_sound(aWavFile,time_interval_s)
 
   specgram(x,256,fs) % 97% overlapping
   xlabel('Time [s]')
-  ylabel('Frequency [Hz]')
+  ylabel('Frequency [kHz]')
   box on; h = colorbar;
   ylabel(h, 'Magnitude [dB]');
     
